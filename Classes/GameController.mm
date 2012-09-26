@@ -1390,14 +1390,14 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
       [piv removeFromSuperview];
    [pieceViews release];
 
-   @try {
+//   @try {
       game = [[Game alloc] initWithGameController: self PGNString: pgnString];
-   }
-   @catch (NSException *e) {
-      NSLog(@"Exception while parsing stored game: %@", [e reason]);
-      NSLog(@"game:\n%@", pgnString);
-      game = [[Game alloc] initWithGameController: self];
-   }
+//   }
+//   @catch (NSException *e) {
+//      NSLog(@"Exception while parsing stored game: %@", [e reason]);
+//      NSLog(@"game:\n%@", pgnString);
+//      game = [[Game alloc] initWithGameController: self];
+//   }
 
    if ([remoteEngineController isConnected])
       [remoteEngineController sendToServer: [game remoteEngineGameString]];
