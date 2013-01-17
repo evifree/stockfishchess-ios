@@ -25,6 +25,10 @@
 #import "PGN.h"
 #import "RemoteEngineController.h"
 
+#ifdef TOUCHTESTDRIVER
+#import "TouchTestHelper.h"
+#endif
+
 #include "../Chess/misc.h"
 
 using namespace Chess;
@@ -759,6 +763,10 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
    else if (move_is_ep(m))
       [self removePieceOn: to - pawn_push([game sideToMove])];
 
+#ifdef TOUCHTESTDRIVER
+  [TouchTestHelper updateTouchTestId:[self pieceImageViewForSquare: from] withLocationOnBoard:to];
+#endif
+  
    // Move the piece
    [[self pieceImageViewForSquare: from] moveToSquare:
                                    [self rotateSquare: to]];
@@ -899,6 +907,11 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
          PieceImageView *piv = [[PieceImageView alloc] initWithFrame: rect
                                                       gameController: self
                                                            boardView: boardView];
+        
+#ifdef TOUCHTESTDRIVER
+        [TouchTestHelper setTouchTestId:piv withLocationOnBoard:sq withPiece:p];
+#endif
+        
          [piv setImage: pieceImages[p]];
          [piv setUserInteractionEnabled: YES];
          [piv setAlpha: 0.0];

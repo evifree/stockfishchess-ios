@@ -19,6 +19,10 @@
 #import "GameController.h"
 #import "PieceImageView.h"
 
+#ifdef TOUCHTESTDRIVER
+#import "TouchTestHelper.h"
+#import "TouchTestDriver.h"
+#endif
 
 @implementation PieceImageView
 
@@ -251,6 +255,10 @@
          rect.origin = endPt;
          [self setFrame: rect];
          [UIView commitAnimations];
+        
+#ifdef TOUCHTESTDRIVER
+        [TouchTestHelper updateTouchTestId:self withLocationOnBoard:releasedSquare];
+#endif
 
          // Update the game
          [gameController doMoveFrom: square

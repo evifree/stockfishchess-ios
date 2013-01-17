@@ -55,6 +55,8 @@ using namespace Chess;
 	[window makeKeyAndVisible];
 	
 	[[UIApplication sharedApplication] setIdleTimerDisabled: YES];
+  
+  window.rootViewController = viewController;
 	
 	[self performSelectorInBackground: @selector(backgroundInit:)
 						   withObject: nil];

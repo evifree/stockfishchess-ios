@@ -344,6 +344,21 @@
       return NO;
 }
 
+- (BOOL) shouldAutorotate
+{
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    return YES;
+  else
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    return UIInterfaceOrientationMaskAll;
+  else
+    return UIInterfaceOrientationPortrait;
+}
+
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
                                          duration:(NSTimeInterval)duration {
