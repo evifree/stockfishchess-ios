@@ -381,6 +381,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		5BCE61F516A8D2C2007B5B7B /* TouchTestHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE61F416A8D2C2007B5B7B /* TouchTestHelper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -861,6 +862,8 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Stockfish_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stockfish_Prefix.pch; sourceTree = "<group>"; };
+		5BCE61F316A8D2C2007B5B7B /* TouchTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchTestHelper.h; sourceTree = "<group>"; };
+		5BCE61F416A8D2C2007B5B7B /* TouchTestHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchTestHelper.mm; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Stockfish-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Stockfish-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -972,6 +975,8 @@
 				1796FF4D11D3921A0074E5B7 /* SimpleOptionTableController.mm */,
 				1796FF4E11D3921A0074E5B7 /* StrengthOptionController.h */,
 				1796FF4F11D3921A0074E5B7 /* StrengthOptionController.mm */,
+				5BCE61F316A8D2C2007B5B7B /* TouchTestHelper.h */,
+				5BCE61F416A8D2C2007B5B7B /* TouchTestHelper.mm */,
 				1796FF5011D3921A0074E5B7 /* TypeFileNameController.h */,
 				1796FF5111D3921A0074E5B7 /* TypeFileNameController.mm */,
 			);
@@ -1890,6 +1895,7 @@
 				1796008D11D393A60074E5B7 /* value.cpp in Sources */,
 				179600BD11D395860074E5B7 /* ucioption.cpp in Sources */,
 				179600BE11D395860074E5B7 /* value.cpp in Sources */,
+				5BCE61F516A8D2C2007B5B7B /* TouchTestHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
