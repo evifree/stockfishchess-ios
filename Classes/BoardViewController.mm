@@ -27,6 +27,8 @@
 #import "PGN.h"
 #import "SetupViewController.h"
 
+#define SYSTEM_VERSION_LT(v) ([[[UIDevice currentDevice] systemVersion] compare: v options:NSNumericSearch] == NSOrderedAscending)
+
 @implementation BoardViewController
 
 @synthesize analysisView, bookMovesView, boardView, whiteClockView, blackClockView, moveListView, gameController, searchStatsView;
@@ -577,10 +579,13 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 - (void)toolbarButtonPressed:(id)sender {
    NSString *title = [sender title];
 
-   // Ignore duplicate presses on the "Game" and "Move" buttons:
-   if ([gameMenu isVisible] && [title isEqualToString: @"Game"] ||
-       [moveMenu isVisible] && [title isEqualToString: @"Move"])
+  //quick fix for iOS 8
+  if(SYSTEM_VERSION_LT(@"8.0")){
+    //Ignore duplicate presses on the "Game" and "Move" buttons:
+    if (([gameMenu isVisible] && [title isEqualToString: @"Game"]) ||
+        ([moveMenu isVisible] && [title isEqualToString: @"Move"]))
       return;
+  }
 
    // Dismiss action sheet popovers, if visible:
    if ([gameMenu isVisible] && ![title isEqualToString: @"Game"])
